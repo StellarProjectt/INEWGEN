@@ -1,0 +1,25 @@
+---------------- 1--------------------
+sudo apt-get update
+
+sudo apt-get install python3.8-dev python3.8-venv python3-pip libatlas-base-dev gfortran libgl1-mesa-glx libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev -y
+
+sudo usermod -a -G dialout $USER
+
+Resstart Jetson Nano to apply the group changes.
+---------------- 2--------------------      
+cd ~/Desktop
+mkdir robot_project
+cd robot_project
+---------------- 3--------------------
+python3.8 -m venv venv
+source venv/bin/activate
+---------------- 4--------------------
+pip install --upgrade pip
+---------------- 5--------------------
+pip install cython numpy
+---------------- 6--------------------
+pip install opencv-python
+pip install pyserial
+---------------- 7--------------------
+# (พิมพ์ pip install media แล้วกดปุ่ม Tab เพื่อให้มันเติมชื่อไฟล์ยาวๆ ให้เอง)
+pip install mediapipe-*.whl
